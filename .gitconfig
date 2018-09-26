@@ -1,0 +1,10 @@
+[user]
+	name = Taewon D. Kim
+	email = kimt33@mcmaster.ca
+[core]
+	editor = vim
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
