@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# We can turn the home directory into a git repository without too much of a
+# headache by creating a bare repository
+#   git init --bare $HOME/myconfig
+# then creating an appropriate git command to use the correct git repository
+# i.e. current file
+
+/usr/bin/git --git-dir=$HOME/myconfig/ --work-tree=$HOME "$@"
+
+# the configuration needs to be changed to ignore untracked files
+#   git_dotfile config --local status.showUntrackedFiles no
+# sources: https://news.ycombinator.com/item?id=11071754
+#          https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/
